@@ -1,0 +1,333 @@
+<!-- create a new page with a header and 2 columns -->
+<!-- create a script editor web part in the header and add the below code -->
+<script language="javascript" type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  .img {
+    width: 100%;
+    height: auto;
+    }
+    .singleBack {
+        background-color: rgb(230, 229, 229);
+        padding-top: .5em !important;
+        color: black;
+        width: 100%;
+    }
+    .material-icons.md-48 { font-size: 48px; }
+    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+    
+    .lbl {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 3em;
+        color: white;
+    }
+    .btn {
+        border: none;
+        border-radius: 10px;
+        background-color: #003b4d;
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 40px;
+        height: 120px ;
+        width: 120px;
+        float: left;
+    }
+</style>
+<img class="img" src="https://kmext.hii-tsd.com/sites/jcetiip/portal/SiteAssets/HII%20Dashboard%20Background.png" alt="jcetii-background">
+<div class="singleBack">
+        <button type="button" class="btn" id="travel-auth">
+            <span class="material-icons md-48 md-light">flight</span></br>
+            <label for="travel-auth" value="Travel Authorization" class="lbl">Travel Authorization</label>
+        </button>
+        <button type="button" class="btn" id="trip-report" >
+            <span class="material-icons md-48 md-light">flag_circle</span></br>
+            <label for="trip-report" value="Trip Reports" class="lbl">Trip Reports (TR)</br></label>
+        </button>
+        <button type="button" class="btn" id="initiate-purchase" >
+            <span class="material-icons md-48 md-light">request_quote</span></br>
+            <label for="initiate-purchase" value="Initiate Purchase" class="lbl">Initiate Purchase</label>
+        </button>
+        <button type="button" class="btn" id="deliverables" >
+            <span class="material-icons md-48 md-light">all_inbox</span></br>
+            <label for="deliverables" value="Deliverables Library" class="lbl">Deliverables Library</label>
+        </button>
+        <button type="button" class="btn" id="shared-docs" >
+            <span class="material-icons md-48 md-light">folder_open</span></br>
+            <label for="shared-docs" value="Shared Documents" class="lbl">Shared Documents</label>
+        </button>
+        <button type="button" class="btn" id="eww-request" >
+            <span class="material-icons md-48 md-light">schedule</span></br>
+            <label for="eww-request" value="EWW Request" class="lbl">EWW Request</label>
+        </button>
+
+<hr style="width:100%; margin-top:20px; color: #003b4d;" />
+
+<script language="javascript" type="text/javascript">
+   $(document).ready(function() {
+        $("#travel-auth").click(function() {
+            showTARModal();
+        });
+        $("#trip-report").click(function() {
+            showTRModal();
+        });
+        $("#initiate-purchase").click(function() {
+            showRIPModal();
+        });
+        $("#deliverables").click(function() {
+            showDeliverablesModal();
+        });
+        $("#shared-docs").click(function() {
+            showSharedDocsModal();
+        });
+        $("#eww-request").click(function() {
+            showEWWModal();
+        });
+
+    });
+    function showTARModal() {
+            var options = {
+            url: 'https://app.smartsheetgov.com/b/form/0999ef3b24804b61a70377f40ecdbff2',
+            title: 'TAR Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+    
+    function showTRModal() {
+            var options = {
+            url: 'https://app.smartsheetgov.com/b/form/c7c39464ba634f4c800b20134a590c7a',
+            title: 'TR Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+        function showRIPModal() {
+            var options = {
+            url: 'https://app.smartsheetgov.com/b/form/c64766f223284abe8c5b8af4fb69ff35',
+            title: 'RIP Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+
+        function showDeliverablesModal() {
+            var options = {
+            url: 'https://app.smartsheetgov.com/b/form/3d3cabf8ff994b059d1ef47f92b3368a',
+            title: 'Deliverables Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+        function showSharedDocsModal() {
+            var options = {
+            url: 'https://app.smartsheetgov.com/b/form/6ed431dc1db94ac592e4493307b73965',
+            title: 'Shared Docs Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+        function showEWWModal() {
+            var options = {
+            url: "https://app.smartsheetgov.com/b/form/e48aa0a3b2594989bb3656845d89ff1f",
+            title: 'EWW Request Form',
+            allowMaximize: false,
+            showClose: true,
+            width: 1500,
+            height: 900,
+            dialogReturnValueCallback: function (dialogResult, returnValue) {
+                window.open('', '_parent', ''); window.close();
+            }
+        };
+        SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options);
+        return false;
+    }
+</script>
+<!-- end header code snippet -->
+
+<!-- in the left hand column add the below code for the financial and reporting dashboards -->
+<iframe width="100%" height=800 src="https://app.smartsheetgov.com/b/publish?EQBCT=9bd54ee1e015497ab017e7a0430f4faa" style="border:0;"></iframe>
+<hr style="width:100%" />
+<iframe width="100%" height=800 src="https://app.smartsheetgov.com/b/publish?EQBCT=923ca296e4654587a74b4077c1fcc646" style="border:0;"></iframe>
+
+<!-- end dashboard iframes -->
+
+<!-- insert the following into right side column fro contacts, prd details and work statement--> 
+<div>
+</div> 
+<table cellspacing="0" width="100%" class="ms-rteTable-3 ">
+   <tbody>
+      <tr class="ms-rteTableEvenRow-3">
+         <td class="ms-rteTableEvenCol-3" colspan="2" style="width: 50%;">
+            <div style="text-align: left;">​ 
+               <strong style="font-size: 16pt;">​​​​Mission Partner (363 ISRW) Contacts​​</strong>​<br/></div> ​</td>
+      </tr>
+      <tr class="ms-rteTableOddRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;"> 
+               <strong>​Government POC:</strong><br/></span></td>
+         <td class="ms-rteTableOddCol-3">
+            <span style="font-size: 19px;"> 
+               <br/></span></td>
+      </tr>
+      <tr class="ms-rteTableEvenRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​Performing Org&#160;POC:<br/></span></td>
+         <td class="ms-rteTableOddCol-3" style="text-align: right;">
+            <span style="font-size: 19px;"> 
+               <span style="font-size: 16pt;">​​</span><a href="mailto:vance.mathis.1@us.af.mil"><span style="font-size: 16pt;">1st Lt Vance Mathis</span></a><br/>555-222-1234</span></td>
+      </tr>
+      <tr class="ms-rteTableOddRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​Funding Org POC:<br/></span></td>
+         <td class="ms-rteTableOddCol-3" style="text-align: right;">
+            <span style="font-size: 19px;"> 
+               <span style="font-size: 16pt;">​</span><a href="mailto:richard.atwell1@us.af.mil"><span style="font-size: 16pt;">Richard Atwell</span></a><br/>555-222-1234</span></td>
+      </tr>
+      <tr class="ms-rteTableEvenRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​FEDSIM&#160;TPOC:<br/></span></td>
+         <td class="ms-rteTableOddCol-3" style="text-align: right;">
+            <a href="mailto:erik.oquindo@gsa.gov"> 
+               <span style="font-size: 16pt;">Erik Oquindo</span></a><br/><span style="font-size: 14pt;">555-222-1234</span><br/></td>
+      </tr>
+      <tr class="ms-rteTableOddRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​FEDSIM​&#160;​COR:<br/></span></td>
+         <td class="ms-rteTableOddCol-3" style="text-align: right;">
+            <span style="font-size: 19px;"> 
+               <span style="font-size: 16pt;">​</span><a href="mailto:jennifer.kara@gsa.gov"><span style="font-size: 16pt;">Jennifer Kara</span></a><br/>555-222-1234</span></td>
+      </tr>
+      <tr class="ms-rteTableEvenRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​<strong>HII Project&#160;POC:</strong><br/></span></td>
+         <td class="ms-rteTableOddCol-3">​<br/></td>
+      </tr>
+      <tr class="ms-rteTableOddRow-3">
+         <td class="ms-rteTableEvenCol-3">
+            <span style="font-size: 19px;">​Contractor Project Manager<br/></span></td>
+         <td class="ms-rteTableOddCol-3" style="text-align: right;">
+            <span style="font-size: 16pt;">Ron Garra<br/><span style="font-size: 19px;">555-222-1234</span><br/></span></td>
+      </tr>
+   </tbody>
+</table>
+<br/>
+<div>​​<br/>
+   <div>
+      <div style="color: #aacacb;">
+         <table cellspacing="0" width="100%" class="ms-rteTable-3 ">
+            <tbody>
+               <tr class="ms-rteTableHeaderRow-3">
+                  <td class="ms-rteTableHeaderEvenCol-3" rowspan="1" colspan="2" style="width: 710.234px; height: 48px;">
+                     <span class="ms-rteThemeForeColor-2-0" style="font-size: 16pt;">​​<strong>​​PRD Details​​​​</strong></span><br/></td>
+               </tr>
+               <tr class="ms-rteTableOddRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;">
+                     <span class="ms-rteThemeForeColor-2-0" style="font-size: 20px;">​<span>Project Number</span><br/></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​225<br/></span></span></td>
+               </tr>
+               <tr class="ms-rteTableEvenRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​Project Name<br/></span></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​STO SME Support (ACC)<br/></span></span></td>
+               </tr>
+               <tr class="ms-rteTableOddRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​Project Locations<br/></span></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​Nellis AFB, NV<br/>Langley AFB, VA<br/></span></span></td>
+               </tr>
+               <tr class="ms-rteTableEvenRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">Start Date​</span></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​September 28, 2022<br/></span></span></td>
+               </tr>
+               <tr class="ms-rteTableOddRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">End Date​</span></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">​September 27, 2023<br/></span></span></td>
+               </tr>
+               <tr class="ms-rteTableEvenRow-3">
+                  <td class="ms-rteTableEvenCol-3" style="width: 200px;"> 
+                     <span class="ms-rteThemeForeColor-2-0">
+                        <span> </span> 
+                        <span style="font-size: 20px;">Client Name​</span></span></td>
+                  <td class="ms-rteTableOddCol-3" style="width: 201px;"> 
+                     <span class="ms-rteThemeForeColor-2-0"> </span> 
+                     <span class="ms-rteThemeForeColor-2-0" style="font-size: 20px;">​363 ISRW</span><br/><br/></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div style="color: #aacacb;">
+         <span class="ms-rteThemeForeColor-2-0" style="font-size: 20px;">​​<span class="ms-rteThemeForeColor-2-0" style="font-size: 16pt;">​</span></span></div>
+      <div style="color: #aacacb;">
+         <span class="ms-rteThemeForeColor-2-0" style="font-size: 20px;"> 
+            <span class="ms-rteThemeForeColor-2-0" style="font-size: 16pt;"></span> 
+            <strong class="ms-rteThemeForeColor-2-0" style="font-family: segoe ui; font-size: 16pt;">PROVIDE MODELING AND SIMULATION (M&amp;S) FOR ASSESSMENT</strong><br/><br/><span style="font-size: 18px;">​The contractor shall conduct research and analysis to develop M&amp;S and analytical reports to enhance tactical and strategic survivability and lethality decisions via quantitative and qualitative techniques. The contractor shall utilize operations research methodologies, statistical analysis, and simulation tools to analyze system alternatives and develop recommendations in terms of mission effectiveness, vulnerability, and cost.</span></span><span style="font-size: 18px;"></span></div>
+      <p class="def-text" unselectable="on" style="color: #aacacb;">
+         <span style="font-size: 18px;"> 
+            <span class="ms-rteThemeForeColor-2-0">A 5th Generation, Large Force Exercise (LFE) Project Analysis is needed that: captures cost of the current LFE execution; provides a cost estimate to operate the proposed changes to the LFE to accommodate integrated 4th/5th generation Air/Space/Cyber weapons system integrated execution; examines courses of action associated with defining proposed changes; scopes a study effort for establishing the proposed actions to execution; and provides guidance for management of these actions while they are planned and executed.​​</span></span></p>
+      <br/>
+   </div>
+   <br/>
+   <br/>​​​​<br/>​<br/></div>
+   <!-- end right side colum input -->
